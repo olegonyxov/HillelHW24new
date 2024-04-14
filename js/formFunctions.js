@@ -43,9 +43,8 @@ function collectData() {
       errorMsg = "Incorrect Username input"
     } 
     if (password.length < 8 ){
-      console.log("Password is too short")
       fake.push(false)
-      errorMsg = "Password is too short"
+      errorMsg = "Password must be at least 8 characters"
     } 
     if (!age.match(/^\d+$/)){
       fake.push(false)
