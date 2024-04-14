@@ -1,8 +1,8 @@
 function collectData() {
-    let id = 1;
-    if (checkID() !== null){
+    let id;
+    if (checkID()){
       id = checkID()
-    }
+    } else {id = 1}
     const form = document.forms[0].elements;
     const firstName = form.firstName.value;
     const lastName = form.lastName.value;
