@@ -2,10 +2,7 @@
 let formCheck = false
 let errorMsg = ""
 function collectData() {
-    let id = 1;
-    if (checkID() !== null){
-      id = checkID()
-    }
+    let id = checkID();
     const form = document.forms[0].elements;
     const userName = form.userName.value;
     const password = form.password.value;
