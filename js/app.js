@@ -24,10 +24,13 @@ function addNewUser(userID){
     if (localStorage.getItem('users')) {
         users = JSON.parse(localStorage.getItem('users'));
     }
-    users.push(user);
+    if (formCheck === true){
+        users.push(user);
     users.sort((a, b) => a.id - b.id);
     localStorage.setItem("users", JSON.stringify(users));
     location.reload();
+    } else {alert(errorMsg)}
+    
 }
 
 
@@ -38,13 +41,12 @@ usersMain.appendChild(users_Raw)
 for (user in parsedUser){
     console.log(parsedUser[user])
     let userRaw = document.createElement("ul")
-    userRaw.textContent= `${parsedUser[user].firstName}  ${parsedUser[user].lastName}`
+    userRaw.textContent= `${parsedUser[user].userName}  ${parsedUser[user].age}`
     users_Raw.appendChild(userRaw)
     let userDescription = document.createElement("li")
     userDescription.setAttribute('class', 'userDesc hidden')
     userRaw.appendChild(userDescription)
-    userData = [parsedUser[user].firstName,parsedUser[user].lastName,parsedUser[user].age]
-    userDescription.textContent= `First name: ${parsedUser[user].firstName}.  Last name: ${parsedUser[user].lastName}. Age: ${parsedUser[user].age}`
+    userDescription.textContent= `Username: ${parsedUser[user].userName}.  Age : ${parsedUser[user].age}. Email : ${parsedUser[user].email}. Phone number :  ${parsedUser[user].phoneNumb}. Credit card : ${parsedUser[user].creditCard} `
     userDescription.setAttribute('userID', `${parsedUser[user].id}`)
 
     
