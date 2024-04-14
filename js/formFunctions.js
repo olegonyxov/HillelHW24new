@@ -1,6 +1,6 @@
 
-function collectData(userID = checkID()) {
-    const id = userID;
+function collectData() {
+    const id = checkID();
     const form = document.forms[0].elements;
     const firstName = form.firstName.value;
     const lastName = form.lastName.value;
